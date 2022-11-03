@@ -1,0 +1,23 @@
+version: "2.1"
+
+services:
+
+  bno055_test:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: bno055_test
+    image: bno055_test_image
+    restart: always
+    stdin_open: true
+    tty: true
+    environment:
+      - ROS_DOMAIN_ID=8
+      - DISPLAY
+      - QT_X11_NO_MITSHM=1
+    devices:
+      - /dev/dri:/dev/dri
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ../bno055:/ros2_ws/src/bno055
+    command: sleep infinity
