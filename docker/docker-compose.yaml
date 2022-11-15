@@ -16,8 +16,10 @@ services:
       - DISPLAY
       - QT_X11_NO_MITSHM=1
     devices:
-      - /dev/dri:/dev/dri
+     - /dev/IMU_UART_bridge:/dev/ttyUSB0
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - ../bno055:/ros2_ws/src/bno055
+      - ../box_demo:/ros2_ws/src/box_demo
+
     command: sleep infinity

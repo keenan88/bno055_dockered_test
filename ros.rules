@@ -1,0 +1,2 @@
+KERNEL=="ttyUSB[0-9]*",SUBSYSTEM=="tty",SUBSYSTEMS=="usb",ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", SYMLINK+="IMU_UART_bridge"
+
